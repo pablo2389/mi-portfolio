@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fondo opcional */
 body {
   background: linear-gradient(135deg, #0f172a, #081129, #061022);
 }
