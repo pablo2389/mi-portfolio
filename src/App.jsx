@@ -1,21 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import AboutMe from './components/AboutMe';
 import PortfolioShowcase from './components/PortfolioShowcase';
+import './styles/global.css'; // aquí va todo el CSS
 
 export default function App() {
   return (
     <Router>
-      <div className="bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-100 min-h-screen">
-        <Navbar />
-        <main className="pt-20">
-          <Routes>
-            <Route path="/" element={<AboutMe />} />      {/* Página About */}
-            <Route path="/portfolio" element={<PortfolioShowcase />} /> {/* Página Proyectos */}
-          </Routes>
-        </main>
-      </div>
+      <header className="header">
+        <div className="header-container">
+          <div className="header-title">PABLO PIRIS</div>
+          <nav className="header-nav">
+            <Link to="/">Sobre mí</Link>
+            <Link to="/portfolio">Proyectos</Link>
+          </nav>
+        </div>
+      </header>
+
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<AboutMe />} />
+          <Route path="/portfolio" element={<PortfolioShowcase />} />
+        </Routes>
+      </main>
     </Router>
   );
 }
