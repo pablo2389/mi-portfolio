@@ -1,32 +1,57 @@
-import React from 'react';
-import myPhoto from '../assets/Imagen de WhatsApp 2025-09-28 a las 00.21.16_f2e8aae7.jpg';
+import myPhoto from '../assets/pablo_foto.png';
+
+const skills = [
+  { cat: 'Frontend', items: ['React', 'Next.js', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'MUI'] },
+  { cat: 'Backend', items: ['FastAPI', 'Python', 'Node.js', 'REST APIs'] },
+  { cat: 'Bases de datos', items: ['Firebase', 'Supabase', 'MongoDB', 'SQL'] },
+  { cat: 'Bots & IA', items: ['Twilio', 'Telegram API', 'Groq', 'Gemini', 'ManyChat'] },
+  { cat: 'CMS & Web', items: ['WordPress', 'SEO Local', 'Google Maps API', 'Cloudinary'] },
+  { cat: 'Deploy', items: ['Vercel', 'Netlify', 'Railway', 'Render', 'GitHub'] },
+];
 
 export default function AboutMe() {
   return (
-    <section id="about" className="about-section">
-      <div className="about-container">
-        {/* Foto */}
-        <div className="about-photo">
-          <img src={myPhoto} alt="Pablo Piris" />
+    <section className="about-section">
+      <div className="about-hero">
+        <div className="about-photo-wrap">
+          <img src={myPhoto} alt="Pablo Piris" className="about-photo" />
+          <div className="photo-ring" />
         </div>
-
-        {/* Texto */}
-        <div className="about-text">
-          <h1>Pablo Darío Piris</h1>
-          <h2>Frontend Developer | WordPress & React JS | Mendoza, Argentina</h2>
-
-          <p>Soy un profesional con experiencia en desarrollo web y administración, apasionado por crear soluciones digitales funcionales y atractivas. Nací en Grand Bourg, Buenos Aires, y actualmente vivo en Mendoza.</p>
-
-          <p>Durante mi carrera laboral, trabajé en SocialTravel como administrativo, desarrollando páginas web en WordPress y gestionando áreas administrativas y contables. Anteriormente, adquirí experiencia en atención al cliente y logística trabajando en Carrefour en diversos roles.</p>
-
-          <p>Cuento con formación en Logística Empresarial y cursos especializados en Frontend Development con React JS. Además, estoy completando el curso de Project Manager de Google en Coursera.</p>
-
-          <p>Me destaco por mi capacidad para aprender rápido, resolver problemas de manera práctica y combinar habilidades técnicas con experiencia en gestión y atención al cliente.</p>
-
-          <p>✨ <strong>Habilidades principales:</strong> React JS, WordPress, HTML, CSS, JavaScript, SEO local, manejo de bases de datos y herramientas de marketing digital.</p>
-
-          <p>Si querés conocer mis proyectos y trabajos, podés explorar mi portafolio y ver ejemplos de sitios web y aplicaciones que desarrollé.</p>
+        <div className="about-intro">
+          <span className="about-tag">Disponible para trabajar</span>
+          <h1 className="about-name">Pablo Darío Piris</h1>
+          <h2 className="about-role">Full Stack Developer Jr.</h2>
+          <p className="about-sub">Automatizaciones · Bots · APIs · Perfil híbrido tech–operativo</p>
+          <p className="about-bio">
+            Desarrollador con formación intensiva desde 2024. Construyo SaaS, bots de WhatsApp y Telegram,
+            agentes de IA y apps web con bases de datos reales. Más de 17 años en operaciones comerciales
+            y logística — entiendo el negocio tanto como el código.
+          </p>
+          <div className="about-links">
+            <a href="https://github.com/pablo2389" target="_blank" rel="noreferrer" className="btn-outline">GitHub</a>
+            <a href="https://linkedin.com/in/pablo-dario-piris-248032347" target="_blank" rel="noreferrer" className="btn-outline">LinkedIn</a>
+            <a href="mailto:pablodariopiris@gmail.com" className="btn-primary">Contactar</a>
+          </div>
         </div>
+      </div>
+      <div className="skills-section">
+        <h3 className="skills-title">Stack tecnológico</h3>
+        <div className="skills-grid">
+          {skills.map(({ cat, items }) => (
+            <div key={cat} className="skill-card">
+              <div className="skill-cat">{cat}</div>
+              <div className="skill-items">
+                {items.map(i => <span key={i} className="skill-badge">{i}</span>)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="about-extra">
+        <div className="extra-card"><span className="extra-num">17+</span><span className="extra-label">años en operaciones</span></div>
+        <div className="extra-card"><span className="extra-num">10+</span><span className="extra-label">proyectos publicados</span></div>
+        <div className="extra-card"><span className="extra-num">2024</span><span className="extra-label">inicio en desarrollo</span></div>
+        <div className="extra-card"><span className="extra-num">MZA</span><span className="extra-label">Las Heras, Mendoza</span></div>
       </div>
     </section>
   );
