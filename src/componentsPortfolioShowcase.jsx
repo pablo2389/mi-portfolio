@@ -33,9 +33,9 @@ const projects = [
   {
     id: 'p5', title: 'Presupuestos Albañilería',
     desc: 'Generador de presupuestos PDF según valores oficiales de la Cámara de Construcción. Envío por WhatsApp.',
-    url: '',
+    url: 'https://constructor-pro.vercel.app/',
     github: 'https://github.com/pablo2389/presupuestos-app',
-    tags: ['Python', 'FastAPI', 'PDF'],
+    tags: ['React js ', 'WhatsApp', 'PDF'],
   },
   {
     id: 'p6', title: 'Alexis Alaniz – Boxeador',
