@@ -71,12 +71,30 @@ body {
 }
 .about-photo {
   width: 160px; height: 160px;
+  min-width: 160px; min-height: 160px;
   max-width: 160px; max-height: 160px;
   border-radius: 50%; object-fit: cover;
   border: 3px solid var(--accent);
   display: block;
+  flex-shrink: 0;
 }
 
+/* === IFRAME PREVIEW === */
+.iframe-container {
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  pointer-events: none;
+  background: var(--bg);
+}
+.iframe-container iframe {
+  width: 166%;
+  height: 166%;
+  border: 0;
+  transform: scale(0.6);
+  transform-origin: top left;
+}
 .photo-ring {
   position: absolute; inset: -8px;
   border-radius: 50%;
@@ -264,18 +282,4 @@ body {
   .about-hero { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .about-name { font-size: 1.7rem; }
   .header-title { font-size: 0.95rem; }
-}
-
-/* === IFRAME PREVIEW === */
-.iframe-container {
-  height: 180px;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  margin-bottom: 0.5rem;
-  pointer-events: none;
-}
-.iframe-container iframe {
-  width: 100%; height: 100%;
-  border: 0; transform-origin: top left;
 }
